@@ -16,12 +16,13 @@ public class HelloController {
     @GetMapping("/hello")
     public String hello() {
 
-        var result =  handler.registerUser(
-                new RegisterUserHandler.Command(
-                        "Axel",
-                        "email@mail.com",
-                        "1234"
-            )
+        var command = new RegisterUserHandler.Command(
+                "Axel",
+                "axelsv50@gmail.com",
+                "password"
+        );
+        RegisterUserHandler.Result result = handler.registerUser(
+                command
         );
 
 
@@ -31,6 +32,7 @@ public class HelloController {
                     success.message();
             case RegisterUserHandler.Result.InvalidData invalidData ->
                     "Invalid data: "+ String.join(", ", invalidData.fields());
+            case RegisterUserHandler.Result.EmailAlreadyExists emailAlreadyExists -> null;
         };
         //return "Hello, world!";
     }

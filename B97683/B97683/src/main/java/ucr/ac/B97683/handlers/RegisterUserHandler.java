@@ -17,6 +17,9 @@ public interface RegisterUserHandler {
 
         //Cantidad de parámetros no definida String...
         final record InvalidData(String... fields) implements Result{}
+
+        record EmailAlreadyExists(String email) implements Result {
+        }
     }
 
     //Métodos de la interface (Obligatorio implementar en cada clase)
