@@ -34,6 +34,8 @@ public class RoomController {
         return switch (result) {
             case CreateRoomHandler.Result.Success success -> new CreateRoomResponse(success.message());
             case CreateRoomHandler.Result.InvalidData invalidData -> null;
+            case null -> null;
+            default -> null;
         };
     }
 
@@ -52,6 +54,7 @@ public class RoomController {
             case JoinRoomHandler.Result.Success success -> new JoinRoomResponse(success.id(), success.name(), success.users());
             case JoinRoomHandler.Result.InvalidData invalidData -> null;
             case null -> null;
+            default -> null;
         };
     }
 
