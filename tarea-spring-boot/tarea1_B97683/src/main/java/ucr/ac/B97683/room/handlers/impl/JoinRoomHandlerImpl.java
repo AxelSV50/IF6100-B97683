@@ -33,7 +33,7 @@ public class JoinRoomHandlerImpl implements JoinRoomHandler {
         }
 
         //Validar que el alias sea único
-        var currentUser = userRepository.findByAlias(command.alias());
+        var currentUser = userRepository.findByAliasAndRoomID(command.alias(), command.roomID());
         if(currentUser.isPresent()){
             return null;
         }

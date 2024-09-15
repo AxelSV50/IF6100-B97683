@@ -18,5 +18,5 @@ public interface UserRepository  extends JpaRepository<UserEntity, UUID> {
         sobre el cual se ralizará la acción (Debe ser el mismo que en la entidad). No importa el parámetro.
      */
     List<UserEntity> findByRoomID(UUID roomID);
-    Optional<UserEntity> findByAlias(String alias);
+    Optional<UserEntity> findByAliasAndRoomID(String alias, UUID roomID);
 }

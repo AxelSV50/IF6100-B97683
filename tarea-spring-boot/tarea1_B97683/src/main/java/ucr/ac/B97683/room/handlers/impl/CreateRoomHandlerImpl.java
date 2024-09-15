@@ -3,7 +3,6 @@ package ucr.ac.B97683.room.handlers.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ucr.ac.B97683.room.handlers.CreateRoomHandler;
-import ucr.ac.B97683.room.handlers.JoinRoomHandler;
 import ucr.ac.B97683.room.jpa.entities.RoomEntity;
 import ucr.ac.B97683.room.jpa.entities.UserEntity;
 import ucr.ac.B97683.room.jpa.repositories.RoomRepository;
