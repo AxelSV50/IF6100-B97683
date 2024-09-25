@@ -1,0 +1,1560 @@
+{
+	"info": {
+		"_postman_id": "aa1ccbeb-cafa-4f27-a14b-059281a87cad",
+		"name": "Tarea_B97683",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38360637"
+	},
+	"item": [
+		{
+			"name": "Create Room",
+			"item": [
+				{
+					"name": "Create Room Success",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sala #1\",\r\n  \"createdBy\": \"Bob Esponja\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Room Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Sala #1\",\r\n  \"createdBy\": \"Bob Esponja\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:32:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Room Invalid name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"     \",\r\n  \"createdBy\": \"Bob Esponja\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Room Invalid name",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"     \",\r\n  \"createdBy\": \"Bob Esponja\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:32:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create Room Invalid alias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sala #1\",\r\n  \"createdBy\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Room Invalid alias",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Sala #1\",\r\n  \"createdBy\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:32:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create Room Invalid JSON",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"createdBy\": \"RoughAndReadyAPI\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Room Invalid JSON",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"createdBy\": \"RoughAndReadyAPI\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:33:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "Pruebas para el endpoint de la API que crea Rooms."
+		},
+		{
+			"name": "Join Room",
+			"item": [
+				{
+					"name": "Join Room Success",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"alias\": \"Calamardo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/join",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"join"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Join Room Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"alias\": \"Calamardo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/join",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"join"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:33:40 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\n    \"name\": \"Sala #1\",\n    \"users\": [\n        \"Bob Esponja\",\n        \"Calamardo\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Join Room Invalid id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"475f5127-de66-4e4f-af90-85704a061bf1\",\r\n  \"alias\": \"Patricio\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/join",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"join"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Join Room Success Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"475f5127-de66-4e4f-af90-85704a061bf1\",\r\n  \"alias\": \"Patricio\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/join",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"join"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:34:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Join Room Invalid alias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"alias\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/join",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"join"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Join Room Invalid id Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"alias\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/join",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"join"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:34:31 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Join Room duplicated alias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"alias\": \"Calamardo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/join",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"join"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Join Room duplicated alias",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"alias\": \"Calamardo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/join",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"join"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:37:22 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Join Room Invalid JSON",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/join",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"join"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Join Room duplicated alias Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/join",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"join"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:38:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "Pruebas para el endpoint de la API que agrega a un usuario a una Room."
+		},
+		{
+			"name": "Send Messages",
+			"item": [
+				{
+					"name": "Send Message Success",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"alias\": \"Calamardo\",\r\n  \"message\": \"Esto es un test!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Send Message Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"alias\": \"Calamardo\",\r\n  \"message\": \"Esto es un test!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/message",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:44:25 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\n    \"createdOn\": \"2024-09-15T14:44:25.5418299-06:00\",\n    \"message\": \"Esto es un test!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Send Message Invalid id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c01\",\r\n  \"alias\": \"Calamardo\",\r\n  \"message\": \"Esto es un test!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Send Message Invalid id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c01\",\r\n  \"alias\": \"Calamardo\",\r\n  \"message\": \"Esto es un test!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/message",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:45:40 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Send Message Invalid alias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"alias\": \"Arenita\",\r\n  \"message\": \"Esto es un test de un alias que no está en la sala!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Send Message Invalid alias",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c01\",\r\n  \"alias\": \"Arenita\",\r\n  \"message\": \"Esto es un test de un alias que no está en la sala!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/message",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:48:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Send Message Invalid Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"alias\": \"Calamardo\",\r\n  \"message\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Send Message Invalid Message",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"alias\": \"Calamardo\",\r\n  \"message\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/message",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:50:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Send Message Invalid JSON",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"message\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Send Message Invalid JSON",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\r\n  \"message\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/message",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:55:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "Pruebas para el endpoint de la API que envía mensajes al Room"
+		},
+		{
+			"name": "Get Messages",
+			"item": [
+				{
+					"name": "Get All Messages Success",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Messages Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/message",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:54:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\n    \"name\": \"Sala #1\",\n    \"messages\": [\n        {\n            \"alias\": \"Calamardo\",\n            \"message\": \"Esto es un test!\",\n            \"createdOn\": \"2024-09-15T14:44:25.54183-06:00\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get All Messages Success 2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/message",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:57:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c00\",\n    \"name\": \"Sala #1\",\n    \"messages\": [\n        {\n            \"alias\": \"Calamardo\",\n            \"message\": \"Esto es un test!\",\n            \"createdOn\": \"2024-09-15T14:44:25.54183-06:00\"\n        },\n        {\n            \"alias\": \"Bob Esponja\",\n            \"message\": \"Bienvenido Calamardo!\",\n            \"createdOn\": \"2024-09-15T14:57:39.871795-06:00\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Messages Invalid Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Messages Invalid Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"e77ebbb4-29f5-4db1-a1c7-a2f4a39c6c02\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/message",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 20:59:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Get All Messages Invalid JSON",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/B97683/room/message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"B97683",
+								"room",
+								"message"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Messages Invalid JSON",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/B97683/room/message",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"B97683",
+										"room",
+										"message"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 15 Sep 2024 21:01:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}

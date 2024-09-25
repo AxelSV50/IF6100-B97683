@@ -1,0 +1,15 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+
+    <!-- Se debe agregar un elemento  changeSet por cada cambio en la BD-->
+    <!-- Por cada cambio se debe crear un nuevo archivo SQL que modifique las tablas o cree las nuevas -->
+    <!-- Los id deben ser distintos -->
+    <changeSet id="1" author="Axel">
+        <sqlFile path="db/changelog/001-create-room-tables.sql"/>
+    </changeSet>
+
+
+</databaseChangeLog>

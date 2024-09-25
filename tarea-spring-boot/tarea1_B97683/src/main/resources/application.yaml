@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: client-service
+  datasource:
+    # Aquí definimos las credenciales a la BD H2
+    # Se define que no guarde en memoria, sino en un archivo tareaDB
+    url: jdbc:h2:file:C:/data/tareaDB
+    username: user
+    password: password
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  liquibase:
+    #Lleva una secuencia de cambios
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+jwt:
+  secret: KXiUPknkoVDCHdNrrYnxmA5oQLbv+LE7eHG8vkk71fjEPq0lmlZKwBhUVLUqKSmGam8P4kWxXKTGCDRgpZ5BMA==
+
