@@ -1,28 +1,30 @@
-import { useState } from 'react';
-
+/* eslint-disable react/react-in-jsx-scope */
+import { FormEvent, useState } from 'react';
+import Details from './Details';
 function App() {
 	const [name, setName] = useState('Welcome to React');
 	const [names, setNames] = useState<string[]>([]);
 
-  const addName = () =>{
-
-    setNames([...names, name])
-    //setName("")
-
-  }
+	const addName = (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setNames([...names, name]);
+		setName('');
+	};
 	return (
-		<>
-			<div style={{ textAlign: 'center', flexFlow: 'column', display: 'flex' }}>
-				<ul>
-          {names.map((name, index) => <li key = {index}>{name}</li>)}
-        </ul>
+		<div
+			style={{ alignContent: 'center', display: 'flex', flexFlow: 'column' }}
+		>
+			<form style={{ textAlign: 'center' }} onSubmit={e => addName(e)}>
 				<input
 					type='text'
+					value={name}
 					onChange={e => setName(e.target.value)}
 				/>
-        <button onClick={addName}>Agregar</button>
-			</div>
-		</>
+				<button>Agregar</button>
+			</form>
+
+			<Details names={names} title={undefined} />
+		</div>
 	);
 }
 
