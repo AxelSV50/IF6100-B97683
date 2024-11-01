@@ -9,7 +9,7 @@ export const useDependencies = () => {
 	const { handleMutation } = useApiHandler();
 
 	const initialValues = {
-		name: 'Axel',
+		name: '',
 		email: '',
 		password: '',
 	};
