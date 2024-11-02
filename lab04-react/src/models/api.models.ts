@@ -9,8 +9,5 @@ export type OkResponse = {
 };
 
 export type Response = {
-
-    result: string
-}
-
-
+	result: string;
+};

@@ -1,21 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from "axios";
+import axios, {
+	AxiosInstance,
+	AxiosResponse,
+	InternalAxiosRequestConfig,
+} from 'axios';
 
 //Interceptor (Patrón de diseño), se ejecuta antes o después de una acción.
 //Por ejemplo, para crear un token de login antes de enviar un request.
-// Para un response, por ejemplo cuando se vence el token   
+// Para un response, por ejemplo cuando se vence el token
 const apiInstance: AxiosInstance = axios.create({
-    baseURL: 'http://localhost:8080',
-
-})
-
+	baseURL: 'http://localhost:8080',
+});
 
 apiInstance.interceptors.request.use(
 	(config: InternalAxiosRequestConfig) => {
 		// const token = getSessionToken();
 
 		// if (!isNill(token)) {
-			// config.headers.Authorization = `Bearer ${token}`;
+		// config.headers.Authorization = `Bearer ${token}`;
 		// }
 
 		return config;
@@ -37,7 +39,7 @@ apiInstance.interceptors.response.use(
 	},
 );
 
-//Cuestión de orden, no hay diferencia en hacerlo directo, 
+//Cuestión de orden, no hay diferencia en hacerlo directo,
 //se hace así porque queremos que el nombre del método sea distinto al que proporciona axios (ejm. axios.get)
 export const doPost = async <I, R>(payload: I, path: string): Promise<R> => {
 	const response: AxiosResponse<R, I> = await apiInstance.post(path, payload);

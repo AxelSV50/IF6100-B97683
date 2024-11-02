@@ -13,7 +13,6 @@ interface DecodedToken {
 }
 
 export const useSessionHandler = () => {
-	
 	const isSessionExpired = (): boolean => {
 		const token = getSessionToken();
 
@@ -34,7 +33,7 @@ export const useSessionHandler = () => {
 		setSessionContext({ email, name });
 		setSessionToken(token);
 	};
-    
+
 	const clearSession = () => {
 		clear();
 		removeSessionToken();

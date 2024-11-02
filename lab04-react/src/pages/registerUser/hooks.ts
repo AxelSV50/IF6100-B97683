@@ -1,11 +1,10 @@
-import { useApiHandler } from "../../hooks/useApiGHandlers";
-import { registerUser } from "../../services/users.service";
-import { RegisterUserForm, RegisterUserRequest } from "./types";
+import { useApiHandler } from '../../hooks/useApiGHandlers';
+import { registerUser } from '../../services/users.service';
+import { RegisterUserForm, RegisterUserRequest } from './types';
 
 //Cualquier lógica que no tenga que ver con componentes del UI
 
 export const useDependencies = () => {
-
 	const { handleMutation } = useApiHandler();
 
 	const initialValues = {
@@ -14,8 +13,8 @@ export const useDependencies = () => {
 		password: '',
 	};
 
-    //Reglas. Para dar formato, esto es parte del componente form de ANT
-    const rules = {
+	//Reglas. Para dar formato, esto es parte del componente form de ANT
+	const rules = {
 		name: [
 			{
 				required: true,
@@ -42,33 +41,27 @@ export const useDependencies = () => {
 		],
 	};
 
-    
-	const handleSubmit = async (parms:RegisterUserForm) => {
-
-		if (parms.password !== parms.passwordConfirmation){
+	const handleSubmit = async (parms: RegisterUserForm) => {
+		if (parms.password !== parms.passwordConfirmation) {
 			return;
 		}
 		const request: RegisterUserRequest = {
-			name: parms.name ,
+			name: parms.name,
 			email: parms.email,
 			password: parms.password,
-		}
+		};
 
-		const { isError, message } = await handleMutation (registerUser, request)
+		const { isError, message } = await handleMutation(registerUser, request);
 
-		if (isError){
-
-			console.log(message)
+		if (isError) {
+			console.log(message);
 		}
 		console.log(`${parms.name} ${parms.email} ${parms.password}`);
-
 	};
 
 	return {
 		handleSubmit,
 		initialValues,
-        rules
+		rules,
 	};
 };
-
-
