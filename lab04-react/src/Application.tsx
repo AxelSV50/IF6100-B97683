@@ -9,6 +9,7 @@ import ErrorBoundary from 'antd/es/alert/ErrorBoundary';
 import RegisterUser from './pages/registerUser';
 import Login from './pages/Login/login';
 
+//
 const publicRoute = () => {
 	return (
 		<Routes>
