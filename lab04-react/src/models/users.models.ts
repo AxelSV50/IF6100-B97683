@@ -1,5 +1,7 @@
+//Posible error por el atributo name/user, verificar con el BE
+
 export interface RegisterUserRequest {
-	name: string;
+	user: string;
 	email: string;
 	password: string;
 }

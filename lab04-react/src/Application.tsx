@@ -2,14 +2,14 @@
 // se settean las rutas aquí, después podemos dirigirnos a ellas
  
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { Main } from './pages/Main';
 import { useSessionHandler } from './hooks/useSessionHandler';
 import ErrorBoundary from 'antd/es/alert/ErrorBoundary';
 import RegisterUser from './pages/registerUser';
 import Login from './pages/Login/login';
+import Home from './pages/Home';
 
-//
 const publicRoute = () => {
 	return (
 		<Routes>
@@ -21,11 +21,20 @@ const publicRoute = () => {
 		</Routes>
 	);
 };
+const privateRoute = () => {
+	return (
+		<Routes>
+			<Route path='/' element={<Main />}>
+				<Route index element={<Home />} />
+			</Route>
+		</Routes>
+	);
+};
 
 const Application = () => {
 	const { sessionContext, loadSessionFromToken } = useSessionHandler();
 
-    //Igual que useEffect: Sirve para cargar datos, calcular datos
+    //Igual que useEffect: Sólo que este sirve para cargar datos, useEffect para ejecutar funciones
 	useMemo(() => {
 		if (sessionContext == null) {
 			loadSessionFromToken();
@@ -38,7 +47,8 @@ const Application = () => {
 			description='Something when wrong, please contact an administrator'
 			message='An unknown error ocurrs'
 		>
-			<BrowserRouter>{publicRoute()}</BrowserRouter>
+			<BrowserRouter>				{sessionContext == null ? publicRoute() : privateRoute()}
+			</BrowserRouter>
 		</ErrorBoundary>
 	);
 };

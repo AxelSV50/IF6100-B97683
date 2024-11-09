@@ -46,7 +46,7 @@ export const useDependencies = () => {
 			return;
 		}
 		const request: RegisterUserRequest = {
-			name: parms.name,
+			user: parms.name,
 			email: parms.email,
 			password: parms.password,
 		};

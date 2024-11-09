@@ -7,12 +7,14 @@ import { jwtDecode } from 'jwt-decode';
 //import { useAppStore } from './store/useAppStore';
 import { useAppStore } from './useAppStore';
 import { AuthenticationResponse } from '../models/users.models';
+
 interface DecodedToken {
 	exp: number;
 	email: string;
 }
 
 export const useSessionHandler = () => {
+	
 	const isSessionExpired = (): boolean => {
 		const token = getSessionToken();
 
@@ -24,6 +26,7 @@ export const useSessionHandler = () => {
 			return !(exp > Math.floor(Date.now() / 1000));
 		}
 	};
+
 	const sessionContext = useAppStore(store => store.session);
 	const setSessionContext = useAppStore(store => store.setSession);
 	const clear = useAppStore(store => store.clearSession);

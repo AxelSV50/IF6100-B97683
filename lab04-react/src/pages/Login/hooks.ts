@@ -8,12 +8,13 @@ import {
 } from '../../models/users.models';
 import { useApiHandler } from '../../hooks/useApiGHandlers';
 import { login } from '../../services/users.service';
+import { useNavigate } from 'react-router-dom';
 
 const useDependencies = () => {
 	const { setSessionStore, clearSession } = useSessionHandler();
 	const { handleMutation } = useApiHandler();
-	//const { setErrorNotificaiton } = useNotificationHandler();
-	//const navigate = useNavigate();
+	//const { setErrorNotification } = useNotificationHandler();
+	const navigate = useNavigate();
 
 	const initialValues = {
 		username: '',
@@ -35,6 +36,7 @@ const useDependencies = () => {
 	};
 
 	const handleLogin = async (values: LoginForm) => {
+		
 		const user: AuthenticationInput = {
 			username: values.username,
 			password: values.password,
@@ -43,11 +45,11 @@ const useDependencies = () => {
 
 		const { result, isError } = await handleMutation(login, user);
 		if (isError) {
-			//	setErrorNotificaiton(message);
+			//	setErrorNotification(message);
 		} else {
 			const response = result as AuthenticationResponse;
 			setSessionStore({ ...response });
-			//	navigate('/');
+			navigate('/');
 		}
 	};
 	const handleCancel = () => {
