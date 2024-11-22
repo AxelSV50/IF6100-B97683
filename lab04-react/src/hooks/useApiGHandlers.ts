@@ -1,14 +1,14 @@
-// Este hook va a manejar el API
-
+// Este hook va a manejar el API, busca generalizar el manejo de errores y , centralizarlo en un único lugar.
 
 import { AxiosError } from 'axios';
 import { ErrorResponse } from '../models/api.models';
 
 //import { useSessionHandler } from './useSessionHandler';
 export const useApiHandler = () => {
-//	const { clearSession } = useSessionHandler();
+	//	const { clearSession } = useSessionHandler();
 
-    // call es tipo input, es decir cualquier función
+	// call es tipo input, es decir cualquier función
+	// Para actualizaciones o escrituras
 	const handleMutation = async <TInput, TResult>(
 		call: (input: TInput) => Promise<TResult>,
 		input: TInput,
@@ -26,8 +26,9 @@ export const useApiHandler = () => {
 				result = axiosError.response;
 				const error = result?.data as ErrorResponse;
 				if (error != null) {
+					
 					if (error.code === 40103) {
-					//	clearSession();
+						//	clearSession();
 					}
 					message = error.message;
 					isError = true;
@@ -38,6 +39,7 @@ export const useApiHandler = () => {
 			throw e;
 		}
 	};
+	//Para lecturas
 	const handleQuery = async <TInput, TResult>(
 		call: (input: TInput) => Promise<TResult>,
 		input: TInput,
@@ -55,7 +57,7 @@ export const useApiHandler = () => {
 				const error = result?.data as ErrorResponse;
 				if (error != null) {
 					if (error.code === 40103) {
-					//	clearSession();
+						//	clearSession();
 					}
 					message = error.message;
 					isError = true;

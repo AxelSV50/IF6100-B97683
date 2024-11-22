@@ -1,12 +1,15 @@
-import { useApiHandler } from "../../hooks/useApiGHandlers";
-import { registerUser } from "../../services/users.service";
-import { RegisterUserForm, RegisterUserRequest } from "./types";
 
-//Cualquier lógica que no tenga que ver con componentes del UI
+import { useNavigate } from 'react-router-dom';
+import { useApiHandler } from '../../hooks/useApiGHandlers';
+import useNotificationHandler from '../../hooks/useNotificationHandler';
+import { RegisterUserRequest } from '../../models/users.models';
+import { registerUser } from '../../services/users.service';
+import { RegisterUserForm } from './types';
 
 export const useDependencies = () => {
-
 	const { handleMutation } = useApiHandler();
+	const { setErrorNotificaiton } = useNotificationHandler();
+	const navigate = useNavigate()
 
 	const initialValues = {
 		name: '',
@@ -14,8 +17,7 @@ export const useDependencies = () => {
 		password: '',
 	};
 
-    //Reglas. Para dar formato, esto es parte del componente form de ANT
-    const rules = {
+	const rules = {
 		name: [
 			{
 				required: true,
@@ -37,38 +39,40 @@ export const useDependencies = () => {
 		passwordConfirmation: [
 			{
 				required: true,
-				message: 'Por favor vuelva a ingresar su contraseña',
+				message: 'Por favor ingrese su contraseña',
 			},
 		],
 	};
 
-    
-	const handleSubmit = async (parms:RegisterUserForm) => {
-
-		if (parms.password !== parms.passwordConfirmation){
+	const handleSubmit = async (parms: RegisterUserForm) => {
+		//validar que las contraseñas sean iguales
+		if (parms.password !== parms.passwordConfirmation) {
 			return;
 		}
+
 		const request: RegisterUserRequest = {
-			name: parms.name ,
+			user: parms.name,
 			email: parms.email,
 			password: parms.password,
-		}
+		};
+		const { isError, message } = await handleMutation(registerUser, request);
 
-		const { isError, message } = await handleMutation (registerUser, request)
+		if (isError) {
+			setErrorNotificaiton(message);
+			return;
+		}else{
 
-		if (isError){
-
-			console.log(message)
+			navigate("/login")
 		}
 		console.log(`${parms.name} ${parms.email} ${parms.password}`);
-
 	};
 
 	return {
 		handleSubmit,
 		initialValues,
-        rules
+		rules,
 	};
 };
 
 
+export default useNotificationHandler;

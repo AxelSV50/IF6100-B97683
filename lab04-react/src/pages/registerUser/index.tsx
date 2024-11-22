@@ -3,7 +3,7 @@ import { Button, Form, Input, Space } from 'antd';
 import { useDependencies } from './hooks';
 
 const RegisterUser = () => {
-	//Hook personalizado, lo único que hace es determinar los valores iniciales para un formulario, un método para el submit 
+	//Hook personalizado, lo único que hace es determinar los valores iniciales para un formulario, un método para el submit
 	//y un apartado de reglas de entrada para los input (documentación de ANT D)
 	const { initialValues, handleSubmit, rules } = useDependencies();
 
@@ -22,7 +22,10 @@ const RegisterUser = () => {
 					<Input placeholder='Contraseña' type='password' />
 				</Form.Item>
 
-				<Form.Item name='passwordConfirmation' rules={rules.passwordConfirmation}>
+				<Form.Item
+					name='passwordConfirmation'
+					rules={rules.passwordConfirmation}
+				>
 					<Input placeholder='Confirmar contraseña' type='password' />
 				</Form.Item>
 
